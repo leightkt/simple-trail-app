@@ -1,0 +1,14 @@
+{
+  "name": "simple-trail-app-backend",
+  "version": "1.0.0",
+  "description": "code challenge for SpankChain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kat Leight",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
