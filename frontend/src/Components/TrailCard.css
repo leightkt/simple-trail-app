@@ -1,3 +1,7 @@
+h2 {
+    font-size: 2.5rem;
+}
+
 .trails-card {
     background-color: rgba(2, 78, 63, 0.178);
     margin: 1rem;
@@ -6,6 +10,20 @@
     box-shadow: 2px 2px 5px rgb(241, 238, 238);
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     border-radius: 4rem;
+}
+
+.trails-card > p {
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details > p {
+    margin: 1rem;
 }
