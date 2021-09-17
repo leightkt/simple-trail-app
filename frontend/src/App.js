@@ -7,7 +7,7 @@ const backendURL = 'http://localhost:9000/'
 
 class App extends Component {
   state = {
-    trails: ""
+    trails: []
   }
   
   componentDidMount() {
