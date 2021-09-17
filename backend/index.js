@@ -29,7 +29,7 @@ app.get('/trails/:id', (req, res) => {
             if (trail[0]) {
                 res.status(200).send(trail[0])
             } else {
-                res.status(404).send({"errors": "trail id not found"})
+                res.status(400).send({"errors": "trail id not found"})
             }
         })
 })
@@ -51,7 +51,7 @@ app.put('/trails/:id', (req, res) => {
                 findTrail(trailId)
                     .then(trail => res.status(202).send(trail[0]))
             } else {
-                res.status(404).send({"errors": "no trail with that id found"})
+                res.status(400).send({"errors": "no trail with that id found"})
             }
         })
         .catch(error => {
@@ -66,7 +66,7 @@ app.delete('/trails/:id', (req, res) => {
             if (deletedRowCount !== 0) {
                 res.status(202).send({deleted: `trail id: ${trailId}`})
             } else {
-                res.status(404).send({"errors": "no trail with that id found"})
+                res.status(400).send({"errors": "no trail with that id found"})
             }
         })
         .catch(error => {
