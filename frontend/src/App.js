@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react'
+import Header from './Components/Header';
+import TrailsContainer from './Containers/TrailsContainer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const backendURL = 'http://localhost:9000/'
+
+class App extends Component {
+  state = {
+    trails: ""
+  }
+  
+  componentDidMount() {
+    this.fetch_trails()
+  }
+
+  fetch_trails = () => {
+    fetch(`${backendURL}trails`, {
+      method: "GET"
+    })
+    .then(response => response.json())
+    .then(trails => this.setTrails(trails))
+  }
+
+  setTrails = (trails) => {
+    this.setState({ trails} )
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <TrailsContainer trails={ this.state.trails } />
+      </div>
+    );
+  }
+  
 }
 
 export default App;

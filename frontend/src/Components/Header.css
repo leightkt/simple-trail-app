@@ -1,0 +1,22 @@
+header {
+    box-shadow: 0 4px 4px -4px rgb(2, 78, 53);
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    color:  rgb(2, 78, 53);
+    font-size: 6rem;
+}
+
+header img {
+    margin-left: 3rem;
+    margin-top: 3rem;
+    width: 25rem;
+    border-radius: 3rem;
+}

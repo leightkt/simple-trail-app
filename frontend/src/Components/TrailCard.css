@@ -1,0 +1,11 @@
+.trails-card {
+    background-color: rgba(2, 78, 63, 0.178);
+    margin: 1rem;
+    padding: 2rem;
+    width: 25rem;
+    box-shadow: 2px 2px 5px rgb(241, 238, 238);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    border-radius: 4rem;
+}
