@@ -1,15 +1,21 @@
 import './TrailCard.css'
 
-function TrailCard({ trail }) {
+function TrailCard({ trail, deleteTrail }) {
+    const { name, length, elevationGain, description } = trail
+
+    const handleClick = () => {
+        deleteTrail(trail)
+    }
 
     return(
         <div className="trails-card">
-            <h2>{ trail.name }</h2>
+            <h2>{ name }</h2>
             <div className="details">
-                <p>{ trail.length } Miles</p>
-                <p>{ trail.elevationGain } Feet</p>
+                <p>{ length } Miles</p>
+                <p>{ elevationGain } Feet</p>
             </div>
-            <p>{ trail.description }</p>
+            <p>{ description }</p>
+            <button onClick={ handleClick }>Delete</button>
         </div>
     )
 }

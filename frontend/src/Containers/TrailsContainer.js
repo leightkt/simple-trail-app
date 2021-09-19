@@ -1,9 +1,9 @@
 import './TrailsContainer.css'
 import TrailCard from "../Components/TrailCard"
 
-function TrailsContainer ({ trails }) {
+function TrailsContainer ({ trails, deleteTrail }) {
     const displayTrails = () => {
-        return trails.map(trail => <TrailCard trail={trail}/>)
+        return trails.map(trail => <TrailCard trail={trail} deleteTrail={ deleteTrail }/>)
     }
 
     return(

@@ -26,11 +26,44 @@ class App extends Component {
     this.setState({ trails} )
   }
 
+  addTrail = (trail) => {
+    const foundtrail = this.state.favorites.find(tr => tr === trail)
+    if(!foundtrail) {
+      this.setState({
+        trails: [...this.state.trails, trail]
+      })
+    }
+
+    fetch(`${backendURL}trails`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content_Type": "application/json"
+      },
+      body: JSON.stringify({
+        trail
+      })
+      .then(response => response.json())
+      .then(result => console.log(result))
+    })
+  }
+
+  deleteTrail = (trail) => {
+    const trails = this.state.trails.filter(tr => tr !== trail)
+    this.setState({ trails })
+
+    fetch(`${backendURL}trails/${trail.id}`, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(result => console.log(result))
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <TrailsContainer trails={ this.state.trails } />
+        <TrailsContainer trails={ this.state.trails } deleteTrail={ this.deleteTrail }/>
       </div>
     );
   }
