@@ -1,0 +1,10 @@
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0rem 5rem;
+}
+
+.search-form > label {
+    display: block
+}

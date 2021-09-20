@@ -3,12 +3,14 @@ import { Component } from 'react'
 import Header from './Components/Header';
 import TrailsContainer from './Containers/TrailsContainer';
 import FormContainer from './Containers/FormContainer';
+import Search from './Components/Search';
 
 const backendURL = 'http://localhost:9000/'
 
 class App extends Component {
   state = {
-    trails: []
+    trails: [],
+    elevation: 0,
   }
   
   componentDidMount() {
@@ -57,12 +59,24 @@ class App extends Component {
       .then(result => console.log(result))
   }
 
+  setElevation = (elevation) => {
+    this.setState({
+      elevation
+    })
+  }
+
+  displayedTrails = () => {
+    return this.state.trails.filter(trail => trail.elevationGain > this.state.elevation)
+  }
+
+
   render() {
     return (
       <div className="App">
         <Header />
         <FormContainer addTrail={ this.addTrail }/>
-        <TrailsContainer trails={ this.state.trails } deleteTrail={ this.deleteTrail }/>
+        <Search setElevation={ this.setElevation } elevation={ this.state.elevation }/>
+        <TrailsContainer trails={ this.displayedTrails() } deleteTrail={ this.deleteTrail }/>
       </div>
     );
   }

@@ -27,3 +27,17 @@ h2 {
 .details > p {
     margin: 1rem;
 }
+
+.trails-card > img {
+    width: 10rem;
+    border-radius: 1rem;
+}
+
+.trails-card > a {
+    text-decoration: none;
+    color: rgb(5, 44, 40);
+}
+
+.trails-card > a:hover {
+    color: rgba(2, 78, 63, 0.178);
+}
