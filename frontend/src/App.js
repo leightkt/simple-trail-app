@@ -2,6 +2,7 @@ import './App.css';
 import { Component } from 'react'
 import Header from './Components/Header';
 import TrailsContainer from './Containers/TrailsContainer';
+import FormContainer from './Containers/FormContainer';
 
 const backendURL = 'http://localhost:9000/'
 
@@ -27,25 +28,22 @@ class App extends Component {
   }
 
   addTrail = (trail) => {
-    const foundtrail = this.state.favorites.find(tr => tr === trail)
-    if(!foundtrail) {
-      this.setState({
-        trails: [...this.state.trails, trail]
-      })
-    }
-
     fetch(`${backendURL}trails`, {
       method: "POST",
       headers: {
-        Accept: "application/json",
-        "Content_Type": "application/json"
+        'Accept': "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        trail
-      })
-      .then(response => response.json())
-      .then(result => console.log(result))
+      body: JSON.stringify(trail)
     })
+    .then(response => response.json())
+    .then(result => {
+      this.setState({
+        trails: [...this.state.trails, result[0]]
+      })
+    })
+
+
   }
 
   deleteTrail = (trail) => {
@@ -63,6 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <FormContainer addTrail={ this.addTrail }/>
         <TrailsContainer trails={ this.state.trails } deleteTrail={ this.deleteTrail }/>
       </div>
     );

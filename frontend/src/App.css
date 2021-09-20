@@ -16,3 +16,17 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
     color: rgb(5, 44, 40);
 }
+
+button {
+    font-family: 'Montserrat Alternates', sans-serif;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 2px 2px 5px rgb(241, 238, 238);
+    color: rgba(2, 78, 63);
+    padding: 1rem;
+}
+
+button:hover {
+    background-color: rgba(2, 78, 63, 0.178);
+    box-shadow: none;
+}

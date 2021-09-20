@@ -1,0 +1,16 @@
+.trails-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.back-button {
+    height: 4rem;
+    align-self: flex-end;
+}
+
+.add-button {
+    height: 4rem;
+    align-self: center;
+}

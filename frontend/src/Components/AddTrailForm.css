@@ -1,0 +1,48 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+input {
+    border: none;
+    height: 3rem;
+    width: 20rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: right;
+    border-bottom: 1px solid  rgba(2, 78, 63);
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+input:focus {
+    border: none;
+    background-color: rgba(2, 78, 63);
+    color: whitesmoke;
+}
+
+input[type="submit"] {
+    box-shadow: 2px 2px 5px rgb(241, 238, 238);
+    color: rgba(2, 78, 63);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(2, 78, 63);
+    color: whitesmoke;
+    box-shadow: none;
+}
+
+label {
+    display: none;
+}
+
+.description-input {
+    height: 6rem;
+}
