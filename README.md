@@ -23,3 +23,14 @@ The API for this app is set up as a Node.js/Express API connected to a postgresq
 
 ## TECHNOLOGY
 This app was created using Node.js, Express, postgresQL, React, Javascript, and CSS.
+
+## TO RUN
+Download the repo. From the backend folder:
+ run `npm install`
+ then `createdb`
+ then `npx knex migrate:latest`
+ then `npx knex seed:run`
+ then `npm run dev`
+
+From the frontend folder:
+ run `npm start`
